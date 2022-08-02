@@ -1,27 +1,22 @@
-from rest_framework import viewsets, permissions, status, filters
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.decorators import action
-from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.response import Response
-from rest_framework.pagination import PageNumberPagination
-from django.shortcuts import get_object_or_404
 from django.db.models import Avg
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, permissions, status, viewsets
+from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-from reviews.models import User, Category, Genre, Title
-from .serializers import (
-    UserSerializer,
-    SignUpSerializer,
-    MyTokenObtainSerializer,
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    TitleSerializer,
-    TitleCreateSerializer
-)
-from .mixins import CreateViewSet, ListCreateDeleteViewSet
-from .permissions import IsAdmin, IsModerator, IsAuthor
+from reviews.models import Category, Genre, Title, User
+
 from .filters import TitleFilter
+from .mixins import CreateViewSet, ListCreateDeleteViewSet
+from .permissions import IsAdmin, IsAuthor, IsModerator
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, MyTokenObtainSerializer,
+                          ReviewSerializer, SignUpSerializer,
+                          TitleCreateSerializer, TitleSerializer,
+                          UserSerializer)
 from .utils import send_email
 
 

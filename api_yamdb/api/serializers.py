@@ -1,10 +1,11 @@
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-from rest_framework import serializers, exceptions
+from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from reviews.models import User, Category, Comment, Genre, Review, Title
+from reviews.models import Category, Comment, Genre, Review, Title, User
+
 from .exceptions import BadConfirmationCode
 from .utils import authenticate
 
