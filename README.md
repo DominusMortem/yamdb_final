@@ -1,4 +1,4 @@
-![workflow](https://github.com/DominusMortem/yamdb_final/blob/master/.github/workflows/yamdb_workflow.yml/badge.svg)
+![workflow](https://github.com/DominusMortem/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ## Проект YaMDb
 ### Разработчики: Попов Серафим, Уколов Алексей и Зиннуров Рамиль
